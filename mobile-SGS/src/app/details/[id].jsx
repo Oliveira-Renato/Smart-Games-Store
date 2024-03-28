@@ -1,6 +1,7 @@
-import { Button, Image, Text, View } from "react-native";
+import { Button, FlatList, Image, Text, View } from "react-native";
 import { styles } from "./styles";
 import { router, useLocalSearchParams } from "expo-router";
+import { CallMapsButton } from "@/components/CallMapsButton";
 
 export default function Details() {
   const {id} = useLocalSearchParams();
@@ -23,7 +24,15 @@ export default function Details() {
       <Text>PS4/XBOX One</Text>
       {/* Preço */}
       <Text>R$200</Text>
-      <Button title="Ver loja fisica"/>
+      {/* Lista de lojas fisicas */}
+      <FlatList
+        data={[
+          {key: 'Shopping Tambore'},
+          {key: 'Shopping União'}
+        ]}
+        renderItem={({item}) => <CallMapsButton store={item.key} />}
+      />
+      {/* Comprar Button */}
       <Button title="Comprar"/>
     </View>
   );

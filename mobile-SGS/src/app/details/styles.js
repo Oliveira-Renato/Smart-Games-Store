@@ -17,4 +17,10 @@ export const styles = StyleSheet.create({
     height: 200,
     borderRadius: theme.borderRadius.md,
   },
+  containerList: {},
+  listTitle: {
+    fontFamily: theme.fonts.family.medium,
+    fontSize: theme.fonts.size.body.md,
+    marginBottom: 18,
+  },
 });

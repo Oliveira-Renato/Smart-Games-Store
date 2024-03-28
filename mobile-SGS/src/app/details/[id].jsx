@@ -24,14 +24,18 @@ export default function Details() {
       <Text>PS4/XBOX One</Text>
       {/* Preço */}
       <Text>R$200</Text>
+
       {/* Lista de lojas fisicas */}
-      <FlatList
-        data={[
-          {key: 'Shopping Tambore'},
-          {key: 'Shopping União'}
-        ]}
-        renderItem={({item}) => <CallMapsButton store={item.key} />}
-      />
+      <View styles={styles.containerList}>
+        <Text style={styles.listTitle}>Onde você pode encontrar:</Text>
+        <FlatList
+          data={[
+            {key: 'Shopping Tambore'},
+            {key: 'Shopping União'}
+          ]}
+          renderItem={({item}) => <CallMapsButton store={item.key} />}
+        />
+      </View>
       {/* Comprar Button */}
       <Button title="Comprar"/>
     </View>

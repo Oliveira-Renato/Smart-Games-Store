@@ -1,6 +1,5 @@
-import { Image, Pressable, Text, View } from "react-native";
+import { Image, Pressable, Text } from "react-native";
 import { styles } from "./styles";
-import { router } from "expo-router";
 
 export function Game({name, imageUri, id, ...rest}) {
   return (

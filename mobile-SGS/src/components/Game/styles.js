@@ -8,4 +8,9 @@ export const styles = StyleSheet.create({
     height: 112,
     borderRadius: theme.borderRadius.md,
   },
+  selected: {
+    borderWidth: 2,
+    borderColor: theme.colors.green_600,
+    backgroundColor: theme.colors.green_100,
+  },
 });

@@ -10,7 +10,7 @@ export default function Home() {
         <Text>Store</Text>
       </Text>
       <Text>Explore, Compre e Divirta-se!</Text>
-
+    
       <Games />
     </View>
   );

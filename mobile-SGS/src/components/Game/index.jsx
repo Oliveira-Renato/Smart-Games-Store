@@ -1,14 +1,15 @@
-import { Image, Text, View } from "react-native";
+import { Image, Pressable, Text, View } from "react-native";
 import { styles } from "./styles";
+import { router } from "expo-router";
 
-export function Game() {
+export function Game({name, imageUri, id, ...rest}) {
   return (
-    <View>
+    <Pressable {...rest}>
       <Image 
         style={styles.image}
-        source={{uri: "https://upload.wikimedia.org/wikipedia/pt/b/bf/Overwatch_logo.jpg"}}
+        source={{uri: imageUri}}
       />
-      <Text>Nome do ogo</Text>
-    </View>
+      <Text>{name}</Text>
+    </Pressable>
   )
 }

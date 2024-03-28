@@ -2,6 +2,7 @@ import { Button, FlatList, Image, Text, View } from "react-native";
 import { styles } from "./styles";
 import { router, useLocalSearchParams } from "expo-router";
 import { CallMapsButton } from "@/components/CallMapsButton";
+import { ButtonDefault } from "@/components/ButtonDefault";
 
 export default function Details() {
   const {id} = useLocalSearchParams();
@@ -19,7 +20,9 @@ export default function Details() {
          Nome do jogo
       </Text>
       {/* Detalhes */}
-      <Text>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime magni voluptatibus molestias nam distinctio voluptate natus ad eaque reiciendis? Soluta quas placeat illum quibusdam reprehenderit voluptatem distinctio obcaecati esse rem!</Text>
+      <Text>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime magni voluptatibus molestias nam distinctio voluptate natus ad eaque reiciendis? Soluta quas placeat illum quibusdam reprehenderit voluptatem distinctio obcaecati esse rem!
+      </Text>
       {/* Plataformas */}
       <Text>PS4/XBOX One</Text>
       {/* Preço */}
@@ -37,7 +40,7 @@ export default function Details() {
         />
       </View>
       {/* Comprar Button */}
-      <Button title="Comprar"/>
+      <ButtonDefault title={"Comprar"} action={2} />
     </View>
   );
 }

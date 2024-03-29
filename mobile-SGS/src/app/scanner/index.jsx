@@ -37,24 +37,31 @@ export default function Scanner() {
   return (
     <View style={styles.container}>
       <BackButton  />
+
+      <View>
+        <Text>Aproxime a camera {"\n"}</Text>
+        <Text>do QRcode</Text>
+      </View>
       
-      <CameraView
-        style={StyleSheet.absoluteFillObject}
-        barcodeScannerSettings={{
-          barCodeTypes: ["qr","ean13"],
-        }}
-        onBarcodeScanned={scanned ? undefined : handleBarcodeScanned}
-      ></CameraView>
-      {scanned && (
-        <View style={styles.scanned}>
-          <Text>{scannedData ?? "N/A" }</Text>
-          <Button
-            disabled={!scanned}
-            title="Escanear de novo."
-            onPress={() => setScanned(false)}
-          />
-        </View>
-      )}
+      <View  style={styles.containerCamera}>
+        <CameraView
+          style={StyleSheet.absoluteFillObject}
+          barcodeScannerSettings={{
+            barCodeTypes: ["qr","ean13"],
+          }}
+          onBarcodeScanned={scanned ? undefined : handleBarcodeScanned}
+        ></CameraView>
+        {scanned && (
+          <View style={styles.scanned}>
+            <Text>{scannedData ?? "N/A" }</Text>
+            <Button
+              disabled={!scanned}
+              title="Escanear de novo."
+              onPress={() => setScanned(false)}
+            />
+          </View>
+        )}
+      </View>
     </View>
   );
 }
@@ -64,6 +71,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+  },
+  containerCamera: {
+    width: 260,
+    height: 260
   },
   camera: {
     flex: 1

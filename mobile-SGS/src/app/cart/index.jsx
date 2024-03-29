@@ -1,7 +1,6 @@
-import { Button, Image, Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { styles } from "./styles";
 import { ButtonDefault } from "@/components/ButtonDefault";
-import { QRcode } from "@/components/QRcode";
 import { BackButton } from "@/components/BackButton";
 
 export default function Cart() {

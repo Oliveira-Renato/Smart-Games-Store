@@ -16,32 +16,34 @@ export default function Details() {
         style={styles.image} 
         source={{uri: "https://upload.wikimedia.org/wikipedia/pt/b/bf/Overwatch_logo.jpg"}} 
         />
-      {/* Titulo do Jogo */}
-      <Text style={styles.title}>
-         Nome do jogo
-      </Text>
-      {/* Detalhes */}
-      <Text>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime magni voluptatibus molestias nam distinctio voluptate natus ad eaque reiciendis? Soluta quas placeat illum quibusdam reprehenderit voluptatem distinctio obcaecati esse rem!
-      </Text>
-      {/* Plataformas */}
-      <Text>PS4/XBOX One</Text>
-      {/* Preço */}
-      <Text>R$200</Text>
+      <View style={styles.infoContainer}>
+        {/* Titulo do Jogo */}
+        <Text style={styles.title}>
+          Nome do jogo
+        </Text>
+        {/* Detalhes */}
+        <Text>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime magni voluptatibus molestias nam distinctio voluptate natus ad eaque reiciendis? Soluta quas placeat illum quibusdam reprehenderit voluptatem distinctio obcaecati esse rem!
+        </Text>
+        {/* Plataformas */}
+        <Text>PS4/XBOX One</Text>
+        {/* Preço */}
+        <Text>R$200</Text>
 
-      {/* Lista de lojas fisicas */}
-      <View styles={styles.containerList}>
-        <Text style={styles.listTitle}>Onde você pode encontrar:</Text>
-        <FlatList
-          data={[
-            {key: 'Shopping Tambore'},
-            {key: 'Shopping União'}
-          ]}
-          renderItem={({item}) => <CallMapsButton store={item.key} />}
-        />
+        {/* Lista de lojas fisicas */}
+        <View styles={styles.containerList}>
+          <Text style={styles.listTitle}>Onde você pode encontrar:</Text>
+          <FlatList
+            data={[
+              {key: 'Shopping Tambore'},
+              {key: 'Shopping União'}
+            ]}
+            renderItem={({item}) => <CallMapsButton store={item.key} />}
+          />
+        </View>
+        {/* Comprar Button */}
+        <ButtonDefault title={"Comprar"} action={2} />
       </View>
-      {/* Comprar Button */}
-      <ButtonDefault title={"Comprar"} action={2} />
     </View>
   );
 }

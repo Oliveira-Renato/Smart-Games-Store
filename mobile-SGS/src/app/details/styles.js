@@ -4,8 +4,11 @@ import { theme } from "@/theme";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 24,
-    marginTop: 20,
+    paddingVertical: 64,
+  },
+  infoContainer: {
+    paddingVertical: 32,
+    paddingHorizontal: 16,
   },
   title: {
     fontFamily: theme.fonts.family.bold,

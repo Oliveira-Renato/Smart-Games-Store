@@ -7,6 +7,6 @@ const port = 3000;
 
 app.use(cors());
 // Rotas
-app.use("/", gamesRoute);
+app.use("/games", gamesRoute);
 
 app.listen(port, console.log(`Server is running on port ${port}`));

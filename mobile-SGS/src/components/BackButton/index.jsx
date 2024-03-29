@@ -1,11 +1,14 @@
 import { router } from "expo-router";
-import { Button } from "react-native";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { styles } from "./styles";
 
 export function BackButton() {
-  const HandleGoBack = () => {
-    router.back()
-  }
-
-  return <Button styles={styles.button} title="Voltar" onPress={HandleGoBack} />
+  return (
+    <MaterialIcons
+      size={32}
+      name="arrow-back"
+      onPress={() => router.back()}
+      style={styles.arrow}
+    />
+  )
 }

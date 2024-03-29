@@ -3,13 +3,14 @@ import { styles } from "./styles";
 import { router, useLocalSearchParams } from "expo-router";
 import { CallMapsButton } from "@/components/CallMapsButton";
 import { ButtonDefault } from "@/components/ButtonDefault";
+import { BackButton } from "@/components/BackButton";
 
 export default function Details() {
   const {id} = useLocalSearchParams();
 
   return (
     <View style={styles.container}>
-      <Button title="voltar" onPress={router.back}/>
+      <BackButton />
       {/* Imagem do Jogo */}
       <Image
         style={styles.image} 

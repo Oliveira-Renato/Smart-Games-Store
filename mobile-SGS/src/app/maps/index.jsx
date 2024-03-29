@@ -8,6 +8,7 @@ import MapView, {
 import { View, Button } from 'react-native';
 import { router, useLocalSearchParams } from "expo-router";
 import { styles } from "./styles";
+import { BackButton } from '@/components/BackButton';
 
 export default function Maps() {
   const initialRegion = {
@@ -20,6 +21,7 @@ export default function Maps() {
   return (
     <View style={styles.container}>
       <View style={{ flex: 1 }}>
+        <BackButton />
         <MapView 
           region={initialRegion}
           initialRegion={initialRegion}
@@ -36,10 +38,6 @@ export default function Maps() {
             description={"Shopping Tamboré"}
           />
         </MapView>
-      </View>
-      
-      <View style={{ position: 'absolute', top: 40, left: 20 }}>
-        <Button title="Voltar" onPress={router.back} />
       </View>
     </View>
   );

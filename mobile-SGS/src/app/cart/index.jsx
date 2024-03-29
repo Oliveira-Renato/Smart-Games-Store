@@ -21,8 +21,8 @@ export default function Cart() {
 
       {/* QR code para verificação de desconto */}
       <View>
-        <Button title="Resgatar Código QR" />
-        <QRcode />
+        {/* <Button title="Resgatar Código QR" /> */}
+        <ButtonDefault title={"Resgatar Código QR"} action={3} />
       </View>
 
       {/* resumo da compra */}

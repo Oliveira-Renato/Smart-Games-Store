@@ -2,10 +2,26 @@ import { ScrollView, Text, View } from "react-native";
 import { styles } from "./styles";
 import { Game } from "../Game";
 import { router } from "expo-router";
+import { useEffect, useState } from "react";
+import API from "@/services/api";
 
 export function Games() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    handleFetchData();
+  }, []);
+
+  const handleFetchData = async () => {
+    try {
+      const response  = await API.get("games");
+      setData(response.data)
+    } catch (error) {
+      console.error("Erro ao buscar data:", error);
+    }
+  }
+
   const handleGameSelected = (id) => {
-    console.log("CLICOU")
     router.navigate("/details/" + id)
   }
   

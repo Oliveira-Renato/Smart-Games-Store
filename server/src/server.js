@@ -8,6 +8,7 @@ const port = 3000;
 
 insertDataIntoDatabase();
 
+app.use(express.json());
 app.use(cors());
 // Rotas
 app.use("/games", gamesRoute);

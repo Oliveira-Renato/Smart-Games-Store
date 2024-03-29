@@ -55,7 +55,7 @@ async function insertDataIntoDatabase() {
   } catch (error) {
     console.error("Erro ao inserir ou verificar jogos: ", error);
   } finally {
-    closeDatabase(); //Encerra conexão com o banco de dados
+    //closeDatabase(); //Encerra conexão com o banco de dados
     return games;
   }
 }

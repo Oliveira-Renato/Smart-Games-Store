@@ -6,7 +6,8 @@ import { ButtonDefault } from "@/components/ButtonDefault";
 import { BackButton } from "@/components/BackButton";
 
 export default function Details() {
-  const {id} = useLocalSearchParams();
+  const params  = useLocalSearchParams();
+  console.log( "aqui",params)
 
   return (
     <View style={styles.container}>
@@ -14,7 +15,7 @@ export default function Details() {
       {/* Imagem do Jogo */}
       <Image
         style={styles.image} 
-        source={{uri: "https://upload.wikimedia.org/wikipedia/pt/b/bf/Overwatch_logo.jpg"}} 
+        source={{uri: ""}} 
         />
       <View style={styles.infoContainer}>
         {/* Titulo do Jogo */}

@@ -2,6 +2,7 @@ import { ScrollView, Text, View } from "react-native";
 import { styles } from "./styles";
 import { Games } from "@/components/Games";
 import { LinearGradient } from 'expo-linear-gradient';
+import { theme } from "@/theme";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
       <View style={styles.headerContainer}>
         <LinearGradient
           // Background Linear Gradient
-          colors={["#6A040F", "#9D0208","#D00000"]}
+          colors={[theme.colors.header.red_300, theme.colors.header.red_200,theme.colors.header.red_100]}
           style={styles.header}
         >
           <Text style={styles.title}>
@@ -27,12 +28,12 @@ export default function Home() {
       {/* <View style={styles.footer} /> */}
       <LinearGradient
         // Background Linear Gradient
-        colors={["rgba(208, 0, 0, 0.8)", "#9D0208"]}
+        colors={[theme.colors.header.red_trans, theme.colors.header.red_200]}
         style={styles.footer}
       />
       <LinearGradient
         // Background Linear Gradient
-        colors={["#D00000","#9D0208", "#6A040F" ]}
+        colors={[theme.colors.header.red_300,theme.colors.header.red_200, theme.colors.header.red_100 ]}
         style={styles.footerTwo}
       />
     </View>

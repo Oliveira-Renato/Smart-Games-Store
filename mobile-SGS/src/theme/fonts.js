@@ -17,6 +17,7 @@ export const fonts = {
       md: 20,
       lg: 24,
       xl: 36,
+      xxl: 44,
     },
   },
 };

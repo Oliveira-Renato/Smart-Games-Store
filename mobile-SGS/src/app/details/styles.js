@@ -13,12 +13,14 @@ export const styles = StyleSheet.create({
   title: {
     fontFamily: theme.fonts.family.bold,
     fontSize: theme.fonts.size.heading.xl,
+    paddingBottom: 12,
   },
   subtitle: {},
   image: {
     width: "full",
     height: 200,
-    borderRadius: theme.borderRadius.md,
+    borderBottomRightRadius: theme.borderRadius.md,
+    borderBottomLeftRadius: theme.borderRadius.md,
   },
   containerList: {},
   listTitle: {

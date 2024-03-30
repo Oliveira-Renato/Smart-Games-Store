@@ -17,7 +17,7 @@ export default function Details() {
 
   const handleFetchData = async () => {
     try {
-      const response = await API.get(`games/${id}`);
+      const response = await API.get(`games/${3}`);
       setData(response.data);
       if (response.data.lojas) {
         setPlataformas(response.data.lojas.split("/"));
@@ -35,9 +35,11 @@ export default function Details() {
     <View style={styles.container}>
       <BackButton />
       <Image style={styles.image} source={{ uri: data.imagem }} />
+
       <View style={styles.infoContainer}>
         <Text style={styles.title}>{data.nome}</Text>
         <Text>{data.descricao}</Text>
+
         <Text>{data.plataformas}</Text>
         <Text>R$ {data.preco}</Text>
 
@@ -56,7 +58,7 @@ export default function Details() {
           />
         </View>
 
-        <ButtonDefault title={"Comprar"} action={2} gameId={data.id} />
+        <ButtonDefault title={"Comprar"} action={2} gameId={id} />
       </View>
     </View>
   );

@@ -57,7 +57,7 @@ export default function Cart() {
       </View>
 
       {/* Botão Confirmar compra */}
-      <ButtonDefault title={"Confirmar Compra"} action={2} />
+      <ButtonDefault title={"Confirmar Compra"} action={4} />
     </View>
   );
 }

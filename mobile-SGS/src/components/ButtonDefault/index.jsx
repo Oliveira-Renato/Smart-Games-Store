@@ -12,8 +12,10 @@ export function ButtonDefault({title, action, gameId}) {
       case 2: 
         router.navigate("/cart/" + gameId);
         break;
-      default:
+      case 3: 
         router.navigate("/scanner/");
+        break;
+      default:
         break;
     }
    

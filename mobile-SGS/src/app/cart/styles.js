@@ -17,14 +17,14 @@ export const styles = StyleSheet.create({
   total: {
     flexDirection: "row",
     justifyContent: "space-between",
-    backgroundColor: theme.colors.black_200,
+    backgroundColor: theme.colors.black_100,
     width: "100%",
     padding: theme.fonts.size.body.md,
     borderRadius: theme.borderRadius.md,
     marginVertical: 18,
   },
   input: {
-    backgroundColor: theme.colors.black_100,
+    backgroundColor: theme.colors.black_200,
     width: "100%",
     padding: theme.fonts.size.body.md,
     borderRadius: theme.borderRadius.md,
@@ -38,9 +38,24 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.family.regular,
     fontSize: theme.fonts.size.body.sm,
   },
+  fontSumaryTitle: {
+    color: theme.colors.white_200,
+    fontFamily: theme.fonts.family.bold,
+    fontSize: theme.fonts.size.body.md,
+    marginVertical: 12,
+  },
   image: {
     width: 112,
     height: 112,
     borderRadius: theme.borderRadius.md,
+  },
+  boxSummary: {
+    flexDirection: "row",
+    gap: 12,
+    backgroundColor: theme.colors.black_200,
+    width: "100%",
+    borderRadius: theme.borderRadius.md,
+    marginBottom: 40,
+    padding: theme.fonts.size.body.sm,
   },
 });

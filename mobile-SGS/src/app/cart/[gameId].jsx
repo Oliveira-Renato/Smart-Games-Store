@@ -51,15 +51,17 @@ export default function Cart() {
       </View>
 
       {/* resumo da compra */}
-      <View>
+      <Text style={styles.fontSumaryTitle}>Resumo</Text>
+      
+      <View style={styles.boxSummary}>
         <Image
           style={styles.image} 
           source={{uri: data.imagem}} 
         />
         <View>
-          <Text>{ data.nome }</Text>
-          <Text>R$ { data.preco }</Text>
-          <Text>{ data.plataformas }</Text>
+          <Text style={styles.fontDefault}>{ data.nome }</Text>
+          <Text style={styles.fontDefault}>R$ { data.preco }</Text>
+          <Text style={styles.fontDefault}>{data.plataformas }</Text>
         </View>
       </View>
 

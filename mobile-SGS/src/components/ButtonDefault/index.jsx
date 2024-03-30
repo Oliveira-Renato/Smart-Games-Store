@@ -4,7 +4,6 @@ import { router } from "expo-router";
 
 export function ButtonDefault({title, action, gameId}) {
   const handleButtonAction = (action) => {
-    
     switch(action) {
       case 1: 
         router.navigate("/maps/");
@@ -22,8 +21,8 @@ export function ButtonDefault({title, action, gameId}) {
   }
 
   return (
-    <TouchableOpacity activeOpacity={0.7} style={[styles.button]} onPress={() => handleButtonAction(action)}>
-      <Text style={[styles.text]}>{title}</Text>
+    <TouchableOpacity activeOpacity={0.7} style={styles.button} onPress={() => handleButtonAction(action)}>
+      <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   )
 }

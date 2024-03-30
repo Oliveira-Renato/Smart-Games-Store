@@ -11,14 +11,14 @@ export const styles = StyleSheet.create({
   button: {
     height: 48,
     width: "full",
-    backgroundColor: theme.colors.green_600,
+    backgroundColor: theme.colors.yellow_300,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: theme.borderRadius.sm,
   },
   text: {
     color: theme.colors.white,
-    fontSize: theme.fonts.size.body.sm,
-    fontFamily: theme.fonts.family.medium,
+    fontSize: theme.fonts.size.body.md,
+    fontFamily: theme.fonts.family.bold,
   },
 });

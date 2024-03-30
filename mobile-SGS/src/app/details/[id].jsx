@@ -36,7 +36,7 @@ export default function Details() {
       <BackButton />
       {/* image description */}
       <View>
-        <Image style={styles.image} source={{ uri: data.imagem }} />
+        <Image style={styles.image} source={{ uri: data.imagem }} resizeMode="cover" />
       </View>
 
       <View style={styles.infoContainer}>

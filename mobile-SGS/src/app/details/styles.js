@@ -20,9 +20,10 @@ export const styles = StyleSheet.create({
   },
   image: {
     width: "full",
-    height: 200,
+    height: 240,
     borderBottomRightRadius: theme.borderRadius.md,
     borderBottomLeftRadius: theme.borderRadius.md,
+    opacity: 0.8,
   },
   containerList: {
     paddingTop: theme.fonts.size.body.md,

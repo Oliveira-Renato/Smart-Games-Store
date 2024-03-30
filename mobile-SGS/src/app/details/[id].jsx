@@ -17,7 +17,7 @@ export default function Details() {
 
   const handleFetchData = async () => {
     try {
-      const response = await API.get(`games/${3}`);
+      const response = await API.get(`games/${id}`);
       setData(response.data);
       if (response.data.lojas) {
         setPlataformas(response.data.lojas.split("/"));

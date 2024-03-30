@@ -4,8 +4,10 @@ export const styles = StyleSheet.create({
   container: {
     flexWrap: "wrap",
     flexDirection: "row",
-    paddingBottom: 200,
-    gap: 12,
-    marginTop: 100,
+    paddingBottom: 46,
+    gap: 20,
+    marginTop: 46,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

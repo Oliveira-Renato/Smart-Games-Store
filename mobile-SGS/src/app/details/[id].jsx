@@ -1,4 +1,4 @@
-import { FlatList, Image, Pressable, Text, View } from "react-native";
+import { FlatList, Image, Pressable, ScrollView, Text, View } from "react-native";
 import { styles } from "./styles";
 import { router, useLocalSearchParams } from "expo-router";
 import { ButtonDefault } from "@/components/ButtonDefault";
@@ -34,22 +34,33 @@ export default function Details() {
   return (
     <View style={styles.container}>
       <BackButton />
-      <Image style={styles.image} source={{ uri: data.imagem }} />
+      {/* image description */}
+      <View>
+        <Image style={styles.image} source={{ uri: data.imagem }} />
+      </View>
 
       <View style={styles.infoContainer}>
         <Text style={styles.title}>{data.nome}</Text>
-        <Text>{data.descricao}</Text>
+        {/* Plataformas */}
+        <View style={styles.boxDefault}>
+          <Text style={styles.fontDefault}>{data.plataformas}</Text>
+        </View>
 
-        <Text>{data.plataformas}</Text>
-        <Text>R$ {data.preco}</Text>
+        {/* Preços */}
+        <View style={styles.boxDefault}>
+          <Text style={styles.fontDefault}>R$ {data.preco}</Text>
+        </View>
 
-        <View styles={styles.containerList}>
-          <Text style={styles.listTitle}>Onde você pode encontrar:</Text>
+        {/* Lojas físicas */}
+        <View style={styles.boxDefault}>
+          <Text style={styles.fontLisTitle}>Onde você pode encontrar:</Text>
+
           <FlatList
+            style={styles.containerList}
             data={plataformas}
             renderItem={({ item }) => (
               <Pressable onPress={() => handlePlataform(item)}>
-                <Text>{item}</Text>
+                <Text style={styles.fontList}>{item}</Text>
               </Pressable>
             )}
             ListEmptyComponent={() => (
@@ -57,9 +68,16 @@ export default function Details() {
             )}
           />
         </View>
+      </View>
+
+      {/* Description */}
+      <ScrollView  showsVerticalScrollIndicator={false}>
+        <View style={styles.descriptionContainer}> 
+          <Text style={styles.fontDesc}>{data.descricao}</Text>
+        </View>
 
         <ButtonDefault title={"Comprar"} action={2} gameId={id} />
-      </View>
+      </ScrollView>
     </View>
   );
 }

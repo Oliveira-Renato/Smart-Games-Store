@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingBottom: 64,
-    backgroundColor: theme.colors.body.main,
+    backgroundColor: theme.colors.black,
   },
   headerContainer: {},
   header: {
@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.family.medium,
   },
   containerGames: {
-    backgroundColor: theme.colors.body.main,
+    backgroundColor: theme.colors.black,
     width: "100%",
     marginBottom: -65,
   },

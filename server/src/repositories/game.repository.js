@@ -26,8 +26,6 @@ async function getGames() {
   } catch (error) {
     console.error("Erro ao buscar todos os dados: ", error);
     throw error;
-  } finally {
-    closeDatabase(); // Fecha a conexão com o banco de dados
   }
 }
 

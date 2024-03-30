@@ -9,11 +9,29 @@ import { View, Button } from 'react-native';
 import { router, useLocalSearchParams } from "expo-router";
 import { styles } from "./styles";
 import { BackButton } from '@/components/BackButton';
+import locations from './locations.json';
 
 export default function Maps() {
+  const {loja}  = useLocalSearchParams();
+  // Função para buscar as coordenadas de uma loja específica
+  function buscarCoordenadasDaLoja(nomeLoja) {
+    // Procura pela loja no array de locais
+    const local = locations.find(local => local.hasOwnProperty(nomeLoja));
+
+    // Se o local for encontrado, retorna suas coordenadas
+    if (local) {
+      return local[nomeLoja];
+    } else {
+      // Se a loja não for encontrada, retorna null ou lança um erro, dependendo do seu cenário
+      return null;
+    }
+  }
+
+  const coordenadas = buscarCoordenadasDaLoja(loja);
+
   const initialRegion = {
-    latitude: -23.50413198941901,
-    longitude: -46.83438279166578,
+    latitude: coordenadas.latitude,
+    longitude: coordenadas.longitude,
     latitudeDelta: 0.01,
     longitudeDelta: 0.01,
   };

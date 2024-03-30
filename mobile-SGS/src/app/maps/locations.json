@@ -1,20 +1,20 @@
 [
   {
-    "shopping_tambore": {
+    "Loja Tamboré": {
       "latitude": -23.50413198941901,
       "longitude": -46.83438279166578
     }
   },
   {
-    "shopping_uniao": {
-      "latitude": -23.53365454216732,
-      "longitude": -46.7664455339848
+    "Loja União": {
+      "latitude": -23.54183823264661,
+      "longitude": -46.76678885672577
     }
   },
   {
-    "shopping_iguatemi": {
-      "latitude": -23.570773513116748,
-      "longitude": -46.68768599170274
+    "Loja Iguatemi": {
+      "latitude": -23.503440095756215,
+      "longitude": -46.848366331608304
     }
   }
 ]

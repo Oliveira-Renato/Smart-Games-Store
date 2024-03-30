@@ -1,13 +1,13 @@
-import { Image, View } from "react-native";
+import { Image, Pressable } from "react-native";
 import { styles } from "./styles";
 
 export function Game({name, description, imageUri, price, plataform, stores, ...rest}) {
   return (
-    <View>
+    <Pressable {...rest}>
       <Image 
         style={styles.image}
         source={{uri: imageUri}}
       />
-    </View>
+    </Pressable>
   )
 }

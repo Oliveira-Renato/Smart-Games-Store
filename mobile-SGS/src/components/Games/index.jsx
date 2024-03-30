@@ -21,25 +21,23 @@ export function Games() {
     }
   }
   
+  const handleGameSelected = (id) => {
+    router.navigate("/details/" + id)
+  }
+
   return (
     <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
       {data.map((game, index) => (
-        <Link
-          key={index} 
-          href={{
-            pathname: "/details/[game]",
-            params: game
-          }}
-        >
-          <Game 
-            name={game.name}
-            description={game.descricao} 
-            imageUri={game.imagem}
-            price={game.preco}
-            plataform={game.plataformas}
-            stores={game.lojas}
-          />
-        </Link>
+        <Game 
+          key={game.id}
+          name={game.name}
+          description={game.descricao} 
+          imageUri={game.imagem}
+          price={game.preco}
+          plataform={game.plataformas}
+          stores={game.lojas}
+          onPress={() => handleGameSelected(game.id)}
+        />
       ))}
     </ScrollView>
   )

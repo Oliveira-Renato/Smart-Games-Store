@@ -2,7 +2,7 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 import { router } from "expo-router";
 
-export function ButtonDefault({title, action}) {
+export function ButtonDefault({title, action, gameId}) {
   const handleButtonAction = (action) => {
     
     switch(action) {
@@ -10,7 +10,7 @@ export function ButtonDefault({title, action}) {
         router.navigate("/maps/");
         break;
       case 2: 
-        router.navigate("/cart/");
+        router.navigate("/cart/" + gameId);
         break;
       default:
         router.navigate("/scanner/");

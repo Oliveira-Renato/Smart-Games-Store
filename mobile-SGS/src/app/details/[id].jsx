@@ -34,49 +34,49 @@ export default function Details() {
   return (
     <View style={styles.container}>
       <BackButton />
-      {/* image description */}
-      <View>
-        <Image style={styles.image} source={{ uri: data.imagem }} resizeMode="cover" />
-      </View>
-
-      <View style={styles.infoContainer}>
-        <Text style={styles.title}>{data.nome}</Text>
-        {/* Plataformas */}
-        <View style={styles.boxDefault}>
-          <Text style={styles.fontDefault}>{data.plataformas}</Text>
+      <ScrollView  showsVerticalScrollIndicator={false}>
+        {/* image description */}
+        <View>
+          <Image style={styles.image} source={{ uri: data.imagem }} resizeMode="cover" />
         </View>
 
-        {/* Preços */}
-        <View style={styles.boxDefault}>
-          <Text style={styles.fontDefault}>R$ {data.preco}</Text>
-        </View>
+        <View style={styles.infoContainer}>
+          <Text style={styles.title}>{data.nome}</Text>
+          {/* Plataformas */}
+          <View style={styles.boxDefault}>
+            <Text style={styles.fontDefault}>{data.plataformas}</Text>
+          </View>
 
-        {/* Lojas físicas */}
-        <View style={styles.boxDefault}>
-          <Text style={styles.fontLisTitle}>Onde você pode encontrar:</Text>
+          {/* Preços */}
+          <View style={styles.boxDefault}>
+            <Text style={styles.fontDefault}>R$ {data.preco}</Text>
+            <View style={styles.boxPrice}>
+              <ButtonDefault title={"Comprar"} action={2} gameId={id} />
+            </View>
+          </View>
 
-          <FlatList
-            style={styles.containerList}
-            data={plataformas}
-            renderItem={({ item }) => (
-              <Pressable onPress={() => handlePlataform(item)}>
-                <Text style={styles.fontList}>{item}</Text>
-              </Pressable>
-            )}
-            ListEmptyComponent={() => (
+          {/* Lojas físicas */}
+          <View style={styles.boxDefault}>
+            <Text style={styles.fontLisTitle}>Onde você pode encontrar:</Text>
+
+            {plataformas.length > 0 ? (
+              plataformas.map((item, index) => (
+                <Pressable key={index} onPress={() => handlePlataform(item)}>
+                  <View style={styles.platformItem}>
+                    <Text style={styles.fontList}>{item}</Text>
+                  </View>
+                </Pressable>
+              ))
+            ) : (
               <Text style={styles.empty}>Nenhuma loja física encontrada.</Text>
             )}
-          />
+          </View>
         </View>
-      </View>
 
-      {/* Description */}
-      <ScrollView  showsVerticalScrollIndicator={false}>
+        {/* Description */}
         <View style={styles.descriptionContainer}> 
           <Text style={styles.fontDesc}>{data.descricao}</Text>
         </View>
-
-        <ButtonDefault title={"Comprar"} action={2} gameId={id} />
       </ScrollView>
     </View>
   );

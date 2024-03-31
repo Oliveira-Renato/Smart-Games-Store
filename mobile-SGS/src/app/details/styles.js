@@ -47,7 +47,7 @@ export const styles = StyleSheet.create({
     fontSize: theme.fonts.size.body.sm,
   },
   fontList: {
-    color: theme.colors.yellow_100,
+    color: theme.colors.gray_200,
     fontFamily: theme.fonts.family.regular,
     fontSize: theme.fonts.size.body.sm,
     paddingBottom: 6,
@@ -56,6 +56,7 @@ export const styles = StyleSheet.create({
     color: theme.colors.white_200,
     fontFamily: theme.fonts.family.bold,
     fontSize: theme.fonts.size.body.sm,
+    paddingBottom: 12,
   },
   boxDefault: {
     backgroundColor: theme.colors.black_200,
@@ -63,5 +64,8 @@ export const styles = StyleSheet.create({
     padding: theme.fonts.size.body.md,
     borderRadius: theme.borderRadius.md,
     marginTop: 12,
+  },
+  boxPrice: {
+    paddingTop: 12,
   },
 });

@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   button: {
     height: 48,
     width: "full",
-    backgroundColor: theme.colors.yellow_300,
+    backgroundColor: theme.colors.header.red_200,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: theme.borderRadius.sm,

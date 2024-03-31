@@ -47,6 +47,7 @@ export default function Cart() {
           placeholder="Cole seu QRCode aqui"
           onChangeText={newText => setQrCode(newText)}
           defaultValue={qrCode}
+          placeholderTextColor={"#8D8D99"}
         />
       </View>
 

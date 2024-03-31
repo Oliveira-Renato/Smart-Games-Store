@@ -7,9 +7,17 @@ export const styles = StyleSheet.create({
     paddingBottom: 64,
     backgroundColor: theme.colors.black,
   },
-  headerContainer: {},
+  headerContainer: {
+    backgroundColor: theme.colors.black_200,
+    borderBottomLeftRadius: theme.borderRadius.lg,
+    borderBottomRightRadius: theme.borderRadius.lg,
+  },
+  headerContainerTitle: {
+    paddingHorizontal: theme.fonts.size.heading.lg,
+    paddingVertical: theme.fonts.size.heading.md,
+  },
   header: {
-    paddingTop: theme.fonts.size.heading.xxl,
+    paddingTop: 54,
     paddingBottom: theme.fonts.size.heading.lg,
     paddingHorizontal: theme.fonts.size.heading.lg,
     borderBottomLeftRadius: theme.borderRadius.lg,
@@ -17,17 +25,17 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontFamily: theme.fonts.family.bold,
-    fontSize: theme.fonts.size.heading.xl,
+    fontSize: theme.fonts.size.heading.lg,
     color: theme.colors.white,
-    textAlign: "center",
+    textAlign: "left",
   },
   titleTwo: {
     color: theme.colors.yellow_200,
   },
   subtitle: {
-    textAlign: "center",
     color: theme.colors.white_200,
     fontFamily: theme.fonts.family.medium,
+    fontSize: theme.fonts.size.heading.xs,
   },
   containerGames: {
     backgroundColor: theme.colors.black,

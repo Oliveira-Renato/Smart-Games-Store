@@ -12,13 +12,14 @@ export default function Home() {
           // Background Linear Gradient
           colors={[theme.colors.header.red_300, theme.colors.header.red_200,theme.colors.header.red_100]}
           style={styles.header}
-        >
-          <Text style={styles.title}>
-            Smart Games{"\n"}
-            <Text style={styles.titleTwo}>STORE</Text>
-          </Text>
-          <Text  style={styles.subtitle}>Explore, Compre e Divirta-se!</Text>
-        </LinearGradient>
+        />
+        {/* Titulo e subtitulo */}
+        <View style={styles.headerContainerTitle}>
+          <View>
+            <Text style={styles.title}>Smart Games Store</Text>
+          </View>
+          <Text  style={styles.subtitle}>Explore, compre e divirta-se!</Text>
+        </View>
       </View>
     
       <ScrollView style={styles.containerGames} showsVerticalScrollIndicator={false}>

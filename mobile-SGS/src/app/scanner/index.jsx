@@ -3,11 +3,16 @@ import { useCameraPermissions, CameraView } from "expo-camera/next";
 import { Button, StyleSheet, Text, View } from "react-native";
 import { BackButton } from "@/components/BackButton";
 import { styles } from "./styles";
+import * as Clipboard from 'expo-clipboard';
 
 export default function Scanner() {
   const [permission, requestPermission] = useCameraPermissions();
   const [scanned, setScanned] = useState(false);
   const [scannedData, setScannedData] = useState(null); 
+
+  const copyToClipboard = async (scannedData) => {
+    await Clipboard.setStringAsync(scannedData);
+  };
 
   useEffect(() => {
     if (!permission || !permission.granted) {
@@ -56,8 +61,13 @@ export default function Scanner() {
             <Text>{scannedData ?? "N/A" }</Text>
             <Button
               disabled={!scanned}
-              title="Escanear de novo."
-              onPress={() => setScanned(false)}
+              title="Copiar"
+              onPress={() => {
+                if(scannedData) {
+                  copyToClipboard(scannedData);
+                  setScanned(false);
+                }
+              }}
             />
           </View>
         )}

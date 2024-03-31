@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useCameraPermissions, CameraView } from "expo-camera/next";
 import { Button, StyleSheet, Text, View } from "react-native";
 import { BackButton } from "@/components/BackButton";
+import { styles } from "./styles";
 
 export default function Scanner() {
   const [permission, requestPermission] = useCameraPermissions();
@@ -29,7 +30,6 @@ export default function Scanner() {
     );
 
   const handleBarcodeScanned = (data) => {
-    console.log(data)
     setScannedData(data.data);
     setScanned(true);
   };
@@ -39,8 +39,8 @@ export default function Scanner() {
       <BackButton  />
 
       <View>
-        <Text>Aproxime a camera {"\n"}</Text>
-        <Text>do QRcode</Text>
+        <Text style={styles.fontDefault}>Aproxime a camera {"\n"}</Text>
+        <Text style={styles.fontDefault}>do QRcode</Text>
       </View>
       
       <View  style={styles.containerCamera}>
@@ -65,23 +65,3 @@ export default function Scanner() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  containerCamera: {
-    width: 260,
-    height: 260
-  },
-  camera: {
-    flex: 1
-  },
-  scanned: {
-    flexDirection: "column",
-    backgroundColor: "white",
-    padding: 20,
-  },
-});

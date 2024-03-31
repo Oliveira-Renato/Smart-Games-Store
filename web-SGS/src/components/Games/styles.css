@@ -1,0 +1,11 @@
+.card_container {
+  width: 250px;
+}
+.teste {
+  object-fit: contain;
+  width: 4rem;
+  height: 4rem;
+}
+
+.image {
+}

@@ -25,7 +25,7 @@ const Navbar = () => {
     <nav
       className={`paddingX w-full flex items-center py-5 fixed top-0 z-30 
       ${
-        scrolled ? "red_300" : "bg-transparent"
+        scrolled ? "red_gradient" : "bg-transparent"
       }`}
     >
       <div

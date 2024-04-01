@@ -4,13 +4,13 @@ export default function Hero () {
       <div className={`paddingX max-w-7xl mx-auto flex flex-col gap-5`}>
         {/* info */}
         <div>
-          <h1 className={`heroHeadText text-white`}>
+          <h1 className={`heroHeadText text-white gray-gradient px-12 rounded-md`}>
             Smart Games {' '}
             <div className=" relative inline-block">
-              <span className="text-[#FF5733] relative z-10">Store</span>
+              <span className="red_200 relative z-10">Store</span>
             </div>
           </h1>
-          <p className={`heroSubText mt-2 text-white-100 text-center`}>
+          <p className={`heroSubText text-center text-white  self-center rounded-md`}>
             Explore, compre, divirta-se!
           </p>
         </div>

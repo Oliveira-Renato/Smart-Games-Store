@@ -47,7 +47,7 @@ export default function Details () {
                 </div>
               </div>
               {/* Botão comprar */}
-              <button className="bg-primary w-full text-white px-4 py-2 my-2 rounded-md hover:bg-primary-dark">Comprar</button>
+              <button className="red_gradient w-full text-white px-4 py-2 my-2 rounded-md hover:bg-primary-dark">Comprar</button>
             </div>
 
             {/* card 2 - descrição */}

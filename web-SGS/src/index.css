@@ -27,20 +27,26 @@ section {
 .third_bg {
   background: #212121;
 }
-
+.gray-gradient {
+  background: linear-gradient(to bottom, #000000, #111, #212121);
+}
 .red_100 {
-  background: #d00000;
+  color: #d00000;
 }
 .red_200 {
-  background: #9d0208;
+  color: #9d0208;
 }
 .red_300 {
-  background: #6a040f;
+  color: #6a040f;
 }
+
 .red_trans {
   background: rgba(208, 0, 0, 0.8);
 }
 
+.red_gradient {
+  background: linear-gradient(to bottom, #d00000, #9d0208, #6a040f);
+}
 .green-pink-gradient {
   background: "#f5af19";
   background: linear-gradient(90.13deg, #f5af19 1.9%, #ff5733 97.5%);

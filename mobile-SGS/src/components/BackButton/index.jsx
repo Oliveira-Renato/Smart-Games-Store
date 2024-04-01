@@ -3,6 +3,7 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { styles } from "./styles";
 import { View } from "react-native";
 
+//Componente responsavel para retornar o usuario a página anterior
 export function BackButton() {
   return (
     <View style={styles.arrowContainer}>

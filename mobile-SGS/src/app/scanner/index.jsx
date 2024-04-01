@@ -10,16 +10,19 @@ export default function Scanner() {
   const [scanned, setScanned] = useState(false);
   const [scannedData, setScannedData] = useState(null); 
 
+  // Função para copiar os dados escaneados para a área de transferência
   const copyToClipboard = async (scannedData) => {
     await Clipboard.setStringAsync(scannedData);
   };
 
+  // Efeito para solicitar permissão da câmera ao montar o componente
   useEffect(() => {
     if (!permission || !permission.granted) {
       requestPermission();
     }
   }, [permission]);
 
+  // Verificações de permissão da câmera
   if (permission?.status === null)
     return (
       <View>
@@ -27,6 +30,7 @@ export default function Scanner() {
       </View>
     );
 
+  // Caso permissão negada. retorna mensagem
   if (permission?.granted === false)
     return (
       <View>
@@ -34,6 +38,7 @@ export default function Scanner() {
       </View>
     );
 
+  // Função para lidar com a leitura do código de barras  
   const handleBarcodeScanned = (data) => {
     setScannedData(data.data);
     setScanned(true);
@@ -44,10 +49,12 @@ export default function Scanner() {
       <BackButton  />
 
       <View>
+         {/* Instruções para o usuário */}
         <Text style={styles.fontDefault}>Aproxime a camera {"\n"}</Text>
         <Text style={styles.fontDefault}>do QRcode</Text>
       </View>
       
+      {/* Componente CameraView para visualizar a câmera */}
       <View  style={styles.containerCamera}>
         <CameraView
           style={StyleSheet.absoluteFillObject}
@@ -56,6 +63,7 @@ export default function Scanner() {
           }}
           onBarcodeScanned={scanned ? undefined : handleBarcodeScanned}
         ></CameraView>
+        {/* Exibe os dados escaneados e um botão para copiar */}
         {scanned && (
           <View style={styles.scanned}>
             <Text>{scannedData ?? "N/A" }</Text>

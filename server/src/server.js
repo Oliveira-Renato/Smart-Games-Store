@@ -10,7 +10,7 @@ insertDataIntoDatabase();
 
 app.use(express.json());
 app.use(cors());
-// Rotas
+
 app.use("/games", gamesRoute);
 
 app.listen(port, console.log(`Server is running on port ${port}`));

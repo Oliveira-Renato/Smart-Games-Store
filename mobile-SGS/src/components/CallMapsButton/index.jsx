@@ -1,8 +1,9 @@
-import { Button, Text, TouchableOpacity, View } from "react-native";
+import {  Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 import { router } from "expo-router";
 
 export function CallMapsButton({store}) {
+  //Função responsavel por chamar a tela de mapas
   const handleCallMaps = () => {
     router.navigate("/maps/")
   }

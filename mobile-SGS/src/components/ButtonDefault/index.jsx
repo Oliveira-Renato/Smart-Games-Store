@@ -1,8 +1,9 @@
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 import { router } from "expo-router";
 
 export function ButtonDefault({title, action, gameId}) {
+  //função para navegar pelas rotas desejadas dependendo do parametro "action"
   const handleButtonAction = (action) => {
     switch(action) {
       case 1: 
@@ -17,7 +18,6 @@ export function ButtonDefault({title, action, gameId}) {
       default:
         break;
     }
-   
   }
 
   return (

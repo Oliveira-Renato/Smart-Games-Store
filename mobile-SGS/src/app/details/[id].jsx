@@ -15,6 +15,7 @@ export default function Details() {
     handleFetchData();
   }, []);
 
+  // Função para buscar os dados do jogo da API pelo ID
   const handleFetchData = async () => {
     try {
       const response = await API.get(`games/${id}`);

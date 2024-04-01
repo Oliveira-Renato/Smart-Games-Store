@@ -1,7 +1,7 @@
 import { ScrollView } from "react-native";
 import { styles } from "./styles";
 import { Game } from "../Game";
-import { router, Link   } from "expo-router";
+import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import API from "@/services/api";
 
@@ -12,6 +12,7 @@ export function Games() {
     handleFetchData();
   }, []);
 
+  // Função para buscar os dados dos jogos da API
   const handleFetchData = async () => {
     try {
       const response  = await API.get("games");
@@ -21,11 +22,13 @@ export function Games() {
     }
   }
   
+  // Função para lidar com a seleção de um jogo
   const handleGameSelected = (id) => {
     router.navigate("/details/" + id)
   }
 
   return (
+    // ScrollView para rolar a lista de jogos
     <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
       {data.map((game, index) => (
         <Game 

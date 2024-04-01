@@ -15,6 +15,7 @@ export default function Cart() {
     handleFetchData();
   }, []);
 
+  // Função para buscar os dados do jogo da API pelo gameId
   const handleFetchData = async () => {
     try {
       const response = await API.get(`games/${gameId}`);

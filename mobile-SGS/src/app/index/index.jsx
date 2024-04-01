@@ -9,7 +9,6 @@ export default function Home() {
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <LinearGradient
-          // Background Linear Gradient
           colors={[theme.colors.header.red_300, theme.colors.header.red_200,theme.colors.header.red_100]}
           style={styles.header}
         />
@@ -21,19 +20,18 @@ export default function Home() {
           <Text  style={styles.subtitle}>Explore, compre e divirta-se!</Text>
         </View>
       </View>
-    
+
+      {/* lista de jogos */}
       <ScrollView style={styles.containerGames} showsVerticalScrollIndicator={false}>
         <Games />
       </ScrollView>
 
-      {/* <View style={styles.footer} /> */}
+      {/* Fotter effect */}
       <LinearGradient
-        // Background Linear Gradient
         colors={[theme.colors.header.red_trans, theme.colors.header.red_200]}
         style={styles.footer}
       />
       <LinearGradient
-        // Background Linear Gradient
         colors={[theme.colors.header.red_300,theme.colors.header.red_200, theme.colors.header.red_100 ]}
         style={styles.footerTwo}
       />

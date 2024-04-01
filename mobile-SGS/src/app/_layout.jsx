@@ -14,5 +14,6 @@ export default function Layout() {
     Poppins_500Medium,
   });
 
+  // Renderiza o componente Slot se as fontes estiverem carregadas, caso contrário, retorna null
   return fontsLoaded ? <Slot /> : null;
 }

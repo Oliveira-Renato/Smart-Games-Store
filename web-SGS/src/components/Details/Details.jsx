@@ -10,7 +10,6 @@ const Details = () => {
   const [plataformas, setPlataformas] = useState([]);
 
   useEffect(() => {
-
     handleFetchData();
   }, []);
 
@@ -41,7 +40,7 @@ const Details = () => {
           <div className="bg-black-200 p-10 rounded-b-3xl w-full md:w-[50%] max-h-[280px] max-h-[380px]">
             <p className="text-white font-bold text-[40px]">{data.nome}</p>
             <div className="mt-1">
-              <p className="text-white tracking-wider text-[18px]">{data.plataformas}</p>
+              <p className="text-white tracking-wider text-[18px] border-2 w-fit">{data.plataformas}</p>
               <div className="mt-7 flex justify-between items-center gap-1">
                 <div className="flex-1 flex flex-col">
                   <p className="text-white font-medium text-[16px]">R${data.preco}</p>
@@ -55,6 +54,17 @@ const Details = () => {
           {/* card 2 - descrição */}
           <div className='mt-10 md:mt-32 w-full md:w-[50%] lg:w-[40%]'>
             <p className="text-white">{data.descricao}</p>
+
+            <div className='mt-6'>
+              <p className='text-gray-400 text-sm mb-2'>Além de comprar aqui, você também pode encontrar em alguma de nossas lojas físicas:</p>
+              {plataformas.length > 0 ? (
+                plataformas.map((item, index) => (
+                  <p className='text-sm text-red-400'>{item}</p>
+                ))
+              ) : (
+                <p className='text-sm'>Nenhuma loja física encontrada.</p>
+              )}
+            </div>
           </div>
         </div>
       </div>

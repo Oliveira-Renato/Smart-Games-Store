@@ -6,10 +6,33 @@ import { fromLonLat } from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
 import { styles } from '../../styles';
+import locations from './locations.json';
 import "./styles.css";
+import { useParams } from 'react-router-dom';
 
 const Maps = () => {
   const mapRef = useRef(null);
+  const { storeName } = useParams();
+  // Função para buscar as coordenadas de uma loja específica
+  function buscarCoordenadasDaLoja(nomeLoja) {
+    // Procura pela loja no array de locais
+    const local = locations.find(local => local.hasOwnProperty(storeName));
+
+    // Se o local for encontrado, retorna suas coordenadas
+    if (local) {
+      return local[storeName];
+    } else {
+      // Se a loja não for encontrada, retorna null ou lança um erro, dependendo do seu cenário
+      return null;
+    }
+  }
+
+  const coordenadas = buscarCoordenadasDaLoja(storeName);
+
+  const initialRegion = {
+    latitude: coordenadas.latitude,
+    longitude: coordenadas.longitude,
+  };
 
   useEffect(() => {
     if (!mapRef.current) return;
@@ -22,8 +45,8 @@ const Maps = () => {
         }),
       ],
       view: new View({
-        center: fromLonLat([-46.83438279166578, -23.50413198941901]),
-        zoom: 17,
+        center: fromLonLat([initialRegion.longitude, initialRegion.latitude]),
+        zoom: 16,
       }),
     });
 
@@ -43,7 +66,7 @@ const Maps = () => {
         </p>
         
       </div>
-      <div ref={mapRef} style={{ width: '100%', height: '400px', borderRadius: 20 }} />
+      <div ref={mapRef} style={{ width: '100%', height: '500px', borderRadius: 20 }} />
     </div>
   );
 };

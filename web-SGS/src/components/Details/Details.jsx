@@ -1,7 +1,7 @@
 import { SectionWrapper } from '../../hoc'
 import { styles } from '../../styles'
 import API from '../../services/API'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 const Details = () => {
@@ -59,7 +59,10 @@ const Details = () => {
               <p className='text-gray-400 text-sm mb-2'>Além de comprar aqui, você também pode encontrar em alguma de nossas lojas físicas:</p>
               {plataformas.length > 0 ? (
                 plataformas.map((item, index) => (
-                  <p className='text-sm text-red-400'>{item}</p>
+                  //nome da loja aqui
+                  <Link key={index} to={`/maps/${item}`}>
+                    <p className='text-sm text-red-400'>{item}</p>
+                  </Link>
                 ))
               ) : (
                 <p className='text-sm'>Nenhuma loja física encontrada.</p>

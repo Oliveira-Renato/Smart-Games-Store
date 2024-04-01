@@ -1,6 +1,7 @@
 import API from '../../services/API'
 import { Link, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import "./styles.css"
 
 export default function Details () {
   const { id } = useParams();
@@ -19,15 +20,15 @@ export default function Details () {
         setPlataformas(response.data.lojas.split("/"));
       }
     } catch (error) {
-      console.error("Erro ao buscar data:", error);
+      console.error("Erro ao busca-100r data:", error);
     }
   };
 
   return (
-    <div className="mt-24 bg-black-100  overflow-hidden">
-      <div className="bg-tertiary h-[300px] overflow-hidden relative z-10">
+    <div className="mt-24 main_bg  overflow-hidden">
+      <div className="h-[300px] overflow-hidden relative z-10">
         {/* Imagem com opacidade por trás */}
-        <img src={data.imagem} alt="jogo" className="w-full h-full object-cover" />
+        <img src={data.imagem} alt="jogo" className="w-full h-full object-cover opacity-8" />
         {/* Imagem principal */}
         <img src={data.imagem} alt="jogo2" className="absolute top-0 object-contain" />
       </div>
@@ -36,7 +37,7 @@ export default function Details () {
         <div className={`-mt-24 pb-14 paddingX relative second_bg`}>
           <div className='flex flex-wrap justify-around'>
             {/* card 1 */}
-            <div className="bg-black-200 p-10 rounded-b-3xl w-full md:w-[50%] h-fit z-20">
+            <div className="third_bg p-10 rounded-b-3xl w-full md:w-[50%] h-fit z-20">
               <p className="text-white font-bold text-[40px]">{data.nome}</p>
               <div className="mt-1">
                 <p className="text-white tracking-wider text-[18px] border-2 w-fit">{data.plataformas}</p>
@@ -47,7 +48,7 @@ export default function Details () {
                 </div>
               </div>
               {/* Botão comprar */}
-              <button className="red_gradient w-full text-white px-4 py-2 my-2 rounded-md hover:bg-primary-dark">Comprar</button>
+              <button className="red_gradient w-full text-white px-4 py-2 my-2 rounded-md buy_button">Comprar</button>
             </div>
 
             {/* card 2 - descrição */}
@@ -60,7 +61,7 @@ export default function Details () {
                   plataformas.map((item, index) => (
                     //nome da loja aqui
                     <Link key={index} to={`/maps/${item}`}>
-                      <p className='text-sm text-red-400'>{item}</p>
+                      <p className='list_item'> 🏬 {item}</p>
                     </Link>
                   ))
                 ) : (

@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import "./styles.css"
 import API from '../../services/API';
 
-const ServiceCard = ({ index, title, icon }) => {
+const ServiceCard = ({title, icon }) => {
   return (
-    <div className='xs:w-[250px] w-full cursor-pointer'>
+    <div className='xs:w-[250px] w-full cursor-pointer service_card'>
       <div className='w-full red_gradient p-[1px] rounded-[20px] shadow-card overflow-hidden'>
         <div className='bg-black-100 rounded-t-[20px]'>
           <img src={icon} alt="icon" className='w-full h-[280px] object-cover' />

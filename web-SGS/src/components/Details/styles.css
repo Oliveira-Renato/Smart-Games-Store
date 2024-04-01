@@ -1,0 +1,12 @@
+.list_item {
+  font-size: 14px;
+  color: #888888; /* Defina a cor de cinza desejada */
+}
+
+.list_item:hover {
+  color: #d00000; /* Defina a cor desejada ao passar o mouse */
+}
+
+.buy_button:hover {
+  opacity: 0.5;
+}

@@ -56,7 +56,7 @@ export default function Maps() {
   }, []);
 
   return (
-    <div>
+    <section className={"padding"}>
       <div>
         <h2 className={"sectionHeadText"}>Venha em uma de nossas lojas</h2>
         <p className={"sectionSubText margin_title"}>
@@ -65,6 +65,6 @@ export default function Maps() {
         
       </div>
       <div ref={mapRef} style={{ width: '100%', height: '500px', borderRadius: 20 }} />
-    </div>
+    </section>
   );
 };

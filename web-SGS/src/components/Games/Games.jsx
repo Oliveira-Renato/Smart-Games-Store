@@ -7,7 +7,7 @@ import API from '../../services/API';
 const ServiceCard = ({ index, title, icon }) => {
   return (
     <div className='xs:w-[250px] w-full cursor-pointer'>
-      <div className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card overflow-hidden'>
+      <div className='w-full red_gradient p-[1px] rounded-[20px] shadow-card overflow-hidden'>
         <div className='bg-black-100 rounded-t-[20px]'>
           <img src={icon} alt="icon" className='w-full h-[280px] object-cover' />
         </div>
@@ -38,13 +38,10 @@ export default function Games() {
   return (
     <section className='padding'>
       <div>
-        <p className={"sectionSubText"}>
-          Explore e
-        </p>
         <h2 className={"sectionHeadText"}>Confira nossos jogos</h2>
       </div>
 
-      <p className='mt-4 text-secondary text-[17px] max-x-3xl leading-[30px]'>
+      <p className='mt-4 sectionSubText'>
         Não perca as ofertas em nossos de jogos!
       </p>
 

@@ -1,16 +1,14 @@
 import React, { useEffect, useRef } from 'react';
-import { SectionWrapper } from '../../hoc';
 import 'ol/ol.css';
 import { Map, View } from 'ol';
 import { fromLonLat } from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
-import { styles } from '../../styles';
 import locations from './locations.json';
 import "./styles.css";
 import { useParams } from 'react-router-dom';
 
-const Maps = () => {
+export default function Maps() {
   const mapRef = useRef(null);
   const { storeName } = useParams();
   // Função para buscar as coordenadas de uma loja específica
@@ -60,8 +58,8 @@ const Maps = () => {
   return (
     <div>
       <div>
-        <h2 className={`${styles.sectionHeadText}`}>Venha em uma de nossas lojas</h2>
-        <p className={`${styles.sectionSubText} margin_title`}>
+        <h2 className={"sectionHeadText"}>Venha em uma de nossas lojas</h2>
+        <p className={"sectionSubText margin_title"}>
           E garanta já o seu jogo!
         </p>
         
@@ -70,5 +68,3 @@ const Maps = () => {
     </div>
   );
 };
-
-export default SectionWrapper(Maps, 'maps');

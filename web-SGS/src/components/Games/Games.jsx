@@ -1,30 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
-import { styles } from '../../styles'
 import "./styles.css"
-import SectionWrapper from '../../hoc/SectionWrapper'
-
 import API from '../../services/API';
 
-const ServiceCard = ({ index, title, icon }) => { // Corrigido de 'image' para 'icon'
+const ServiceCard = ({ index, title, icon }) => {
   return (
     <div className='xs:w-[250px] w-full cursor-pointer'>
-    <div className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card overflow-hidden'>
-      <div className='bg-black-100 rounded-t-[20px]'>
-        <img src={icon} alt="icon" className='w-full h-[280px] object-cover' />
-      </div>
-      <div className='bg-black-100 rounded-b-[20px] py-3 px-6'>
-        <h3 className='text-white text-[20px] font-bold text-center overflow-hidden whitespace-nowrap'>{title}</h3>
+      <div className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card overflow-hidden'>
+        <div className='bg-black-100 rounded-t-[20px]'>
+          <img src={icon} alt="icon" className='w-full h-[280px] object-cover' />
+        </div>
+        <div className='bg-black-100 rounded-b-[20px] py-3 px-6'>
+          <h3 className='text-white text-[20px] font-bold text-center overflow-hidden whitespace-nowrap'>{title}</h3>
+        </div>
       </div>
     </div>
-  </div>
-
-
   )
 }
 
-const Games = () => {
+export default function Games() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -41,12 +36,12 @@ const Games = () => {
   }
 
   return (
-    <>
+    <section className='padding'>
       <div>
-        <p className={`${styles.sectionSubText}`}>
+        <p className={"sectionSubText"}>
           Explore e
         </p>
-        <h2 className={`${styles.sectionHeadText}`}>Confira nossos jogos</h2>
+        <h2 className={"sectionHeadText"}>Confira nossos jogos</h2>
       </div>
 
       <p className='mt-4 text-secondary text-[17px] max-x-3xl leading-[30px]'>
@@ -60,8 +55,6 @@ const Games = () => {
           </Link>
         ))}
       </div>
-    </>
+    </section>
   )
 }
-
-export default SectionWrapper(Games, 'games')

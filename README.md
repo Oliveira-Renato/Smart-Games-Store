@@ -73,12 +73,6 @@ Bem-vindo ao projeto Smart Games, uma solução para a Smart Games Ltda. que per
    - Execute a aplicação `npm run dev`.
    - Acesse a aplicação pelo navegador através do endereço local.
 
-5. **Executar a Aplicação:**
-   - Após ter feito todos os passos anteriores, dentro do diretório "worklab-desafio":
-   * Execute `php artisan migrate` para criar as tabelas, e em seguida `php artisan serve` para iniciar o servidor backend.
-   - Dentro do diretório "worklab-frontend":
-   - Execute `npm run dev` ou `yarn dev` para iniciar o servidor de desenvolvimento Vite + React.
-   - Acesse a aplicação pelo navegador através do endereço local.
 
 ### Observações Importantes
 

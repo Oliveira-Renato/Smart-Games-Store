@@ -21,7 +21,7 @@ Bem-vindo ao projeto Smart Games, uma solução para a Smart Games Ltda. que per
 
 - **JavaScript (ES6+):** Linguagem de programação utilizada para desenvolver a lógica do frontend.
 - **React Native:** Biblioteca JavaScript para construção da interface do usuário.
-- **Expo:** Plataforma que permite o desenvolvimento de aplicativos móveis com React Native, fornecendo ferramentas e serviços adicionais para facilitar o processo de desenvolvimento.ção.
+- **Expo:** Plataforma que permite o desenvolvimento de aplicativos móveis com React Native, fornecendo ferramentas e serviços adicionais para facilitar o processo de desenvolvimento.
 
 ### Ambiente de Desenvolvimento:
 

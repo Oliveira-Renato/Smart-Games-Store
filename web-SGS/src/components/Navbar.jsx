@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
 import { logo } from '../assets'
 
-const Navbar = () => {
+export default function Navbar () {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -28,9 +27,7 @@ const Navbar = () => {
         scrolled ? "red_gradient" : "bg-transparent"
       }`}
     >
-      <div
-        className='w-full flex justify-between items-center max-w-7xl mx-auto'
-      >
+      <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link
           to={'/'}
           className='flex items-center'
@@ -45,5 +42,3 @@ const Navbar = () => {
     </nav>
   )
 }
-
-export default Navbar

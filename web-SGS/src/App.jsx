@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Games, Hero, Navbar,  Details} from './components'
+import { Games, Hero, Navbar,  Details, Maps} from './components'
 
 const App = () => {
   return (
@@ -12,6 +12,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Games />} />
           <Route path="/details/:id" element={<Details />} />
+          <Route path="/maps/:id" element={<Maps />} />
         </Routes>
       </div>
     </BrowserRouter>
